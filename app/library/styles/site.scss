@@ -5,6 +5,7 @@ $monoFontFamily:        'Oxygen Mono', "Courier New", monospace !default;
 @import "compass/reset";
 @import "compass/css3";
 @import "compass/typography";
+@import "_icons";
 
 * {
     @include box-sizing( border-box );
@@ -79,10 +80,11 @@ button {
 }
 
 $sidebarWidth: 300px;
+$sidebarPeek: 40px;
 
 #sidebar {
     position: fixed;
-    left: -($sidebarWidth - 32px);
+    left: -($sidebarWidth - $sidebarPeek);
     top: 54px;
     bottom: 0;
     width: $sidebarWidth;
@@ -95,53 +97,70 @@ $sidebarWidth: 300px;
     }
     
     .reveal & {
-        @include translate( $sidebarWidth - 32px, 0 );
+        @include translate( $sidebarWidth - $sidebarPeek, 0 );
+    }
+
+    .peek-controls {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -50px;
+        height: 100px;
+        width: $sidebarPeek;
+        text-align: center;
     }
 
     .ctrl-toggle {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 32px;
+        @extend [data-icon]:before;
+        width: 100%;
+        line-height: 0;
+        padding: 0;
+        font-size: 18px;
+        height: 2em;
+        padding: .2em 0;
+        margin-bottom: 0.2em;
         border: none;
         text-indent: -9999em;
         overflow: hidden;
+        @include border-radius( 5px );
 
         &:after {
-            position: relative;
-            left: 5px;
-            content: '';
             text-indent: 0;
             display: block;
-            border: 10px solid transparent;
-            border-left-color: #fafafa;
         }
 
-        .reveal &:after {
-            left: -5px;
-            border-left-color: transparent;
-            border-right-color: #fafafa;
+        &.ctrl-toggle-sidebar:after {
+            @extend .icon-equalizer:before;
+        }
+
+        &.ctrl-toggle-video:after {
+            @extend .icon-youtube-2:before;
         }
     }
 }
 
 #video-area {
-    position: absolute;
+    position: fixed;
     z-index: 1;
-    top: 0;
-    left: 235px;
+    bottom: 0;
+    left: auto;
+    margin-left: -582px;
     overflow: visible;
+    width: 582px;
     padding: 12px 10px 6px;
-    @include border-radius( 0 0 5px 5px );
+    @include border-radius( 0 5px 5px 0 );
     @include transform( translateZ(0) );
-    @include transition( left 0.3s ease-out );
+    @include transition( margin-left 0.3s ease-out );
+
+    .reveal-video & {
+        margin-left: 0;
+    }
 }
 
 #periodic-table {
     position: absolute;
     top: 54px;
-    left: 32px;
+    left: $sidebarPeek;
     right: 0;
     bottom: 0;
     overflow: auto;
@@ -150,7 +169,7 @@ $sidebarWidth: 300px;
 
     .contents {
         position: relative;
-        margin: 110px 40px;
+        margin: 40px 40px 360px;
         padding-right: 40px;
 
         @include box-sizing( content-box );
@@ -159,11 +178,108 @@ $sidebarWidth: 300px;
         @include transition( all 0.3s ease-out );
     }
 
+    .info {
+        display: none;
+        width: 368px;
+        height: 222px;
+        padding: 1.6em 1.6em 1.6em 0;
+        overflow: hidden;
+        z-index: 3;
+        @include border-radius( 5px );
+
+        .symbol {
+            display: block;
+            width: 2.6em;
+            text-align: center;
+            float: left;
+            font-size: 60px;
+            font-family: 'Droid Sans', sans-serif;
+
+            &:after {
+                content: attr(title);
+                display: block;
+                margin-top: 1em;
+                font-size: 16px;
+                font-family: $monoFontFamily;
+            }
+        }
+
+        .above {
+            @include clearfix;
+            margin-bottom: 1em;
+        }
+
+        .details {
+            overflow: hidden;
+            padding-top: 1em;
+            font-size: 14px;
+
+            .line {
+                margin-bottom: 1em;
+                text-transform: capitalize;
+
+                div {
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-align: center;
+                    width: 50%;
+                }
+
+                div:first-child {
+                    width: 40%;
+                    text-align: right;
+                }
+            }
+        }
+
+        .magnetic-response {
+            position: relative;
+            width: 100%;
+            text-align: center;
+
+            abbr {
+                position: relative;
+                z-index: 0;
+                display: inline-block;
+                width: 4.8em;
+                height: 2em;
+                margin-right: -0.65em;
+                padding: 0.5em 0;
+                background: black;
+                text-align: center;
+            }
+
+            data {
+                position: absolute;
+                bottom: -2em;
+                display: inline-block;
+                text-align: center;
+                width: 4em;
+                margin-left: -2em;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    border-left: 1px solid black;
+                    top: -1em;
+                    left: 50%;
+                    margin-left: -1px;
+                    height: 1em;
+                    z-index: -1;
+                }
+            }
+
+            abbr.stp {
+                color: transparent !important;
+            }
+        }
+    }
+
     @include transition( left 0.3s ease-out );
 
     .reveal & {
         left: $sidebarWidth;
-        // @include translate($sidebarWidth - 32px, 0);
+        // @include translate($sidebarWidth - $sidebarPeek, 0);
         // padding-right: $sidebarWidth;
     }
 }
@@ -217,14 +333,18 @@ $sidebarWidth: 300px;
     }
 }
 
+#periodic-table {
+    .info {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
 #periodic-table.mini-table {
 
-    #video-area {
-        left: 140px;
-    }
-
     .contents {
-        margin: 360px 100px;
+        margin: 90px 100px;
     }
 
     .element {
@@ -273,11 +393,11 @@ body {
     button {
         background: $background;
         color: $text;
-        border: 1px solid rgba(0, 255, 255, 0.4);
+        border: 1px solid transparentize($highlight, 0.6);
         @include transition( all 0.3s ease-out );
 
         &:hover {
-            border-color: rgba(0, 255, 255, 0.8);
+            border-color: transparentize($highlight, 0.2);
         }
 
         &:active {
@@ -285,9 +405,9 @@ body {
         }
 
         &.on {
-            color: #222;
-            background: rgba(0, 255, 255, 0.8);
-            border-color: rgba(0, 255, 255, 0.8);
+            color: darken($background, 10);
+            background: transparentize($highlight, 0.2);
+            border-color: transparentize($highlight, 0.2);
         }
     }
 }
@@ -306,27 +426,33 @@ body {
 }
 
 #sidebar {
-    background: #333;
+    background: $background;
     color: #0ff;
     @include transition( transform 0.3s ease-out );
 
     .ctrl-toggle {
         background: transparentize($highlight, 1);
         color: #fafafa;
+        cursor: pointer;
+        border: 2px solid $background;
         
         @include transition( background 0.3s ease-out );
 
+        .reveal &.ctrl-toggle-sidebar {
+            background: darken($background, 5);
+        }
+
+        .reveal-video &.ctrl-toggle-video {
+            background: darken($background, 5);
+        }
+
         &:hover {
-            background: transparentize($highlight, 0.4);
+            background: darken($background, 10);
         }
 
-        &:after {
-            border-left-color: #fafafa;
-        }
-
-        .reveal &:after {
-            border-right-color: #fafafa;
-        }
+        &:active {
+            background: darken($background, 15);
+        }        
     }
 }
 
@@ -337,6 +463,25 @@ body {
 
 #periodic-table {
     background: darken($background, 5);
+
+    .info {
+
+        background: $background;
+        color: $text;
+        border: 1px solid darken($background, 10);
+
+        .symbol {
+            color: $elementText;
+        }
+
+        .details {
+            color: darken(invert($background), 15);
+        }
+
+        .magnetic-response data:after {
+            border-color: $highlight;
+        }
+    }
 }
 
 .element {
@@ -378,6 +523,7 @@ body {
         [data-magnetic-order="#{nth($type, 1)}"] > .inner {
             background: nth($type, 2);
         }
+        .info abbr.#{nth($type, 1)},
         .element.#{nth($type, 1)} > .inner {
             background: nth($type, 2);
         }

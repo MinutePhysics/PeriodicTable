@@ -6,7 +6,8 @@ define(
         'json!data/short-table.json',
         'json!data/long-table.json',
         'json!data/physical-properties.json',
-        'tpl!templates/element.tpl'
+        'tpl!templates/element.tpl',
+        'tpl!templates/element-info.tpl'
     ],
     function(
         $,
@@ -15,7 +16,8 @@ define(
         shortTable,
         longTable,
         physicalProperties,
-        tplElement
+        tplElement,
+        tplInfo
     ) {
 
         'use strict';
@@ -79,10 +81,37 @@ define(
 
                     self.renderElement( element, data );
                 });
+
+                self.ready.then(function(){
+
+                    self.el.on({
+
+                        mouseenter: function( e ){
+
+                            var id = $(this).data('id')
+                                ,data = self.get( id )
+                                ;
+
+                            if ( data ){
+
+                                self.info
+                                    .html( tplInfo.render( data ) )
+                                    .show()
+                                    ;
+                            }
+                        }
+
+                    }, '.element');
+                });
             },
 
             setState: function( state ){
                 var self = this;
+
+                if ( self.ready.state() !== 'resolved' ){
+                    self.ready.then($.proxy(self.setState, self, state));
+                    return;
+                }
 
                 self.el.removeClass('magnetic state').addClass( state );
             },
@@ -120,10 +149,12 @@ define(
                 if (style === 'long'){
 
                     self.setData( longTable );
+                    self.el.attr('data-table-style', 'long');
 
                 } else {
 
                     self.setData( shortTable );
+                    self.el.attr('data-table-style', 'short');
                 }
             },
 
@@ -209,6 +240,7 @@ define(
 
                 self.el = $(self.options.el);
                 self.contents = $('<div>').addClass('contents');
+                self.info = $('<div>').addClass('info').appendTo( self.el );
 
                 self.setTableStyle( self.options.style );
                 self.el.append( self.contents );
