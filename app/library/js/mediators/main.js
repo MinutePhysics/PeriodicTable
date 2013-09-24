@@ -56,8 +56,6 @@ define(
                     el: '#periodic-table'
                 });
 
-                self.initRouter();
-
                 $(function(){
                     self.emit('domready');
                 });
@@ -83,6 +81,9 @@ define(
 
                         self.el.toggleClass('reveal-video');
                         return false;
+                    })
+                    .on('change', '.ctrl-theme', function(e, val){
+                        $('body').toggleClass('light-skin', val === 'Light')
                     })
                     .on('change', '.ctrl-table-style', function(e, val){
                         self.periodicTable.setTableStyle( val );
@@ -125,11 +126,25 @@ define(
 
                         if (self.logic){
                             self.logic.cleanup();
+                            delete self.logic;
                         }
+
+                        self.el.find('#about').hide();
+                        self.controls.show();
+                        self.periodicTable.el.show();
                         
                         require(['./mag'], function( mag ){
                             self.logic = mag( self, self.periodicTable );
                         });
+                    }
+                })
+                .navigate({
+                    path: 'about',
+                    directions: function(params) {
+
+                        self.periodicTable.el.hide();
+                        self.controls.hide();
+                        self.el.find('#about').show();
                     }
                 })
                 .otherwise('mag') // will route all unmatched paths to #/mag
@@ -149,6 +164,9 @@ define(
                 var self = this;
                 self.el = $('#main');
                 self.controls = $('#sidebar');
+
+                self.set('temperature', self.controls.find('.ctrl-temperature').val());
+                self.initRouter();
 
                 $('.toggler').toggler();
             }
