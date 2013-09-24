@@ -138,37 +138,52 @@ you can use the generic selector below, but it's slower:
   content: "\73";
 }
 
-/* line 10, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 12, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 14, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 16, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 body {
   font: 100%/1.2 "Oxygen Mono", "Courier New", monospace;
 }
 
-/* line 18, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 20, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 button {
   margin: 0;
   font-family: "Oxygen Mono", "Courier New", monospace;
 }
 
-/* line 27, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 29, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+.hidden {
+  display: none;
+}
+
+/* line 33, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+.mute {
+  color: #888;
+}
+
+/* line 37, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 41, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .toggler {
   font-size: 1em;
   margin: 0.5em 0;
 }
-/* line 32, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 46, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .toggler button {
   cursor: pointer;
   padding: 0.7em 1em 0.7em;
   font-size: 14px;
   width: 8em;
 }
-/* line 38, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 52, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .toggler button:first-child {
   border-left-width: 1px;
   -webkit-border-radius: 4px 0 0 4px;
@@ -177,7 +192,7 @@ button {
   -o-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
 }
-/* line 42, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 56, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .toggler button:last-child {
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
@@ -186,7 +201,7 @@ button {
   border-radius: 0 4px 4px 0;
 }
 
-/* line 48, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 62, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #site-header {
   position: fixed;
   top: 0;
@@ -194,35 +209,59 @@ button {
   right: 0;
   height: 54px;
   z-index: 2;
-  padding: 0.5em 1em;
+  padding: 0.35em 1em;
   -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
 }
-/* line 59, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 73, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #site-header h1 {
   display: inline-block;
-  margin: 0;
-  margin-right: 1em;
-  font-size: 1em;
+  margin: 0 1em 0 0;
+  font-size: 1.5em;
+  font-family: "Droid Sans", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  vertical-align: middle;
 }
-/* line 66, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 80, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+#site-header h1 small {
+  font-size: 0.5em;
+}
+/* line 85, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+#site-header h1 small,
+#site-header h1 a {
+  color: #888;
+}
+/* line 90, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #site-header ul, #site-header ul > li {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-/* line 72, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 96, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #site-header ul {
+  vertical-align: middle;
+  margin-top: 0.2em;
+  margin-left: 1em;
   display: inline-block;
 }
-/* line 76, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 102, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #site-header ul > li {
   display: inline-block;
   margin-right: 1em;
 }
+/* line 107, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+#site-header ul a {
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
 
-/* line 85, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 119, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #sidebar {
   position: fixed;
   left: -260px;
@@ -235,11 +274,11 @@ button {
   -moz-box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.5);
 }
-/* line 95, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 129, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #sidebar .title {
   margin: 1.5em 0 0.5em;
 }
-/* line 99, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 133, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .reveal #sidebar {
   -webkit-transform: translate(260px, 0);
   -moz-transform: translate(260px, 0);
@@ -247,7 +286,7 @@ button {
   -o-transform: translate(260px, 0);
   transform: translate(260px, 0);
 }
-/* line 103, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 137, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #sidebar .peek-controls {
   position: absolute;
   top: 50%;
@@ -257,7 +296,7 @@ button {
   width: 40px;
   text-align: center;
 }
-/* line 113, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 147, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #sidebar .ctrl-toggle {
   width: 100%;
   line-height: 0;
@@ -275,13 +314,13 @@ button {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 127, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 161, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #sidebar .ctrl-toggle:after {
   text-indent: 0;
   display: block;
 }
 
-/* line 142, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 176, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #video-area {
   position: fixed;
   z-index: 1;
@@ -306,12 +345,45 @@ button {
   -o-transition: margin-left 0.3s ease-out;
   transition: margin-left 0.3s ease-out;
 }
-/* line 155, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 189, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .reveal-video #video-area {
   margin-left: 0;
 }
 
-/* line 160, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 194, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+#about {
+  margin: 154px auto;
+  width: 600px;
+  font-family: "Droid Sans", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+/* line 200, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+#about h1 {
+  font-size: 1.61803em;
+  margin-bottom: 1em;
+}
+/* line 204, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+#about h1 small {
+  font-size: 0.5em;
+}
+/* line 209, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+#about p {
+  margin-bottom: 1em;
+}
+/* line 213, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+#about .ctrl-back {
+  display: inline-block;
+  font-size: 20px;
+  padding: 0.5em 1em;
+  margin-bottom: 3em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 223, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table {
   position: absolute;
   top: 54px;
@@ -326,7 +398,7 @@ button {
   -o-transition: left 0.3s ease-out;
   transition: left 0.3s ease-out;
 }
-/* line 170, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 233, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .contents {
   position: relative;
   margin: 40px 40px 360px;
@@ -344,7 +416,7 @@ button {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-/* line 181, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 244, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info {
   display: none;
   width: 368px;
@@ -358,7 +430,7 @@ button {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 190, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 253, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info .symbol {
   display: block;
   width: 2.6em;
@@ -367,50 +439,50 @@ button {
   font-size: 60px;
   font-family: 'Droid Sans', sans-serif;
 }
-/* line 198, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 261, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info .symbol:after {
   content: attr(title);
   display: block;
-  margin-top: 1em;
+  margin-top: 0.8em;
   font-size: 16px;
   font-family: "Oxygen Mono", "Courier New", monospace;
 }
-/* line 207, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 270, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info .above {
   overflow: hidden;
   *zoom: 1;
   margin-bottom: 1em;
 }
-/* line 212, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 275, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info .details {
   overflow: hidden;
   padding-top: 1em;
   font-size: 14px;
 }
-/* line 217, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 280, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info .details .line {
   margin-bottom: 1em;
   text-transform: capitalize;
 }
-/* line 221, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 284, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info .details .line div {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
   width: 50%;
 }
-/* line 228, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 291, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info .details .line div:first-child {
   width: 40%;
   text-align: right;
 }
-/* line 235, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 298, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info .magnetic-response {
   position: relative;
   width: 100%;
   text-align: center;
 }
-/* line 240, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 303, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info .magnetic-response abbr {
   position: relative;
   z-index: 0;
@@ -422,7 +494,7 @@ button {
   background: black;
   text-align: center;
 }
-/* line 252, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 315, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info .magnetic-response data {
   position: absolute;
   bottom: -2em;
@@ -431,7 +503,7 @@ button {
   width: 4em;
   margin-left: -2em;
 }
-/* line 260, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 323, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info .magnetic-response data:after {
   content: "";
   position: absolute;
@@ -442,16 +514,16 @@ button {
   height: 1em;
   z-index: -1;
 }
-/* line 272, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 335, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info .magnetic-response abbr.stp {
   color: transparent !important;
 }
-/* line 280, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 343, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .reveal #periodic-table {
   left: 300px;
 }
 
-/* line 287, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 350, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .element {
   font-size: 30px;
   width: 2em;
@@ -464,19 +536,19 @@ button {
   -o-transition: -o-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
 }
-/* line 297, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 360, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .element .inner {
   width: 100%;
   height: 100%;
 }
-/* line 302, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 365, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .element .number {
   position: absolute;
   top: 0.4em;
   right: 0.5em;
   font-size: 12px;
 }
-/* line 309, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 372, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .element .symbol {
   position: absolute;
   top: 0.75em;
@@ -489,7 +561,7 @@ button {
   -o-filter: drop-shadow(0px 0px 20px rgba(0, 255, 255, 0.15));
   filter: drop-shadow(0px 0px 20px rgba(0, 255, 255, 0.15));
 }
-/* line 324, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 387, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .element .details {
   position: absolute;
   bottom: .4em;
@@ -501,43 +573,63 @@ button {
   line-height: 1;
 }
 
-/* line 337, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 400, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table .info {
   position: fixed;
   bottom: 10px;
   right: 10px;
 }
 
-/* line 346, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 409, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table.mini-table .contents {
   margin: 90px 100px;
 }
-/* line 350, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 413, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table.mini-table .element {
   font-size: 16px;
 }
-/* line 353, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 416, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table.mini-table .element .symbol {
   top: 1.1em;
 }
-/* line 357, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 420, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table.mini-table .element .number {
   top: auto;
   top: 0.2em;
   right: 0.25em;
 }
-/* line 363, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 426, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #periodic-table.mini-table .element .details {
   display: none;
 }
 
-/* line 387, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+/* line 451, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 body {
-  background: #333333;
+  background: #262626;
 }
-
-/* line 393, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-.toggler button {
+/* line 455, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #about {
+  color: #d4d4d4;
+}
+/* line 458, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #about .ctrl-back {
+  background: #1a1a1a;
+  color: #fafafa;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+/* line 465, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #about .ctrl-back:hover {
+  background: #0d0d0d;
+}
+/* line 469, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #about .ctrl-back:active {
+  background: #0d0d0d;
+}
+/* line 477, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body .toggler button {
   background: #333333;
   color: #aaffff;
   border: 1px solid rgba(0, 255, 255, 0.4);
@@ -546,42 +638,58 @@ body {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-/* line 399, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-.toggler button:hover {
+/* line 483, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body .toggler button:hover {
   border-color: rgba(0, 255, 255, 0.8);
 }
-/* line 407, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-.toggler button.on {
-  color: #1a1a1a;
+/* line 491, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body .toggler button.on {
+  color: #313737;
   background: rgba(0, 255, 255, 0.8);
   border-color: rgba(0, 255, 255, 0.8);
 }
-
-/* line 415, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#site-header {
+/* line 499, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #site-header {
   background: #333333;
   color: #aaffff;
 }
-/* line 419, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#site-header h1 {
+/* line 503, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #site-header h1 {
   color: #fafafa;
 }
-/* line 423, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#site-header a {
+/* line 507, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #site-header a {
   color: #fafafa;
 }
-
-/* line 428, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#sidebar {
+/* line 511, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #site-header ul a {
+  background: rgba(0, 255, 255, 0);
+  color: #fafafa;
+  border: 2px solid #333333;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+/* line 518, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #site-header ul a:hover {
+  background: #1a1a1a;
+}
+/* line 522, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #site-header ul a:active {
+  background: #0d0d0d;
+}
+/* line 528, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #sidebar {
   background: #333333;
-  color: #0ff;
+  color: cyan;
   -webkit-transition: -webkit-transform 0.3s ease-out;
   -moz-transition: -moz-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
-/* line 433, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#sidebar .ctrl-toggle {
+/* line 533, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #sidebar .ctrl-toggle {
   background: rgba(0, 255, 255, 0);
   color: #fafafa;
   cursor: pointer;
@@ -591,126 +699,338 @@ body {
   -o-transition: background 0.3s ease-out;
   transition: background 0.3s ease-out;
 }
-/* line 441, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-.reveal #sidebar .ctrl-toggle.ctrl-toggle-sidebar {
-  background: #262626;
+/* line 543, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body .reveal #sidebar .ctrl-toggle-sidebar {
+  background: #196f6f;
 }
-/* line 445, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-.reveal-video #sidebar .ctrl-toggle.ctrl-toggle-video {
-  background: #262626;
+/* line 547, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body .reveal-video #sidebar .ctrl-toggle-video {
+  background: #196f6f;
 }
-/* line 449, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#sidebar .ctrl-toggle:hover {
+/* line 552, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #sidebar .ctrl-toggle:hover {
   background: #1a1a1a;
 }
-/* line 453, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#sidebar .ctrl-toggle:active {
+/* line 556, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #sidebar .ctrl-toggle:active {
   background: #0d0d0d;
 }
-
-/* line 459, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#video-area {
+/* line 561, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #video-area {
   background: #333333;
   border: 1px solid #1a1a1a;
 }
-
-/* line 464, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table {
+/* line 566, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table {
   background: #262626;
 }
-/* line 467, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table .info {
+/* line 569, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table .info {
   background: #333333;
   color: #aaffff;
   border: 1px solid #1a1a1a;
 }
-/* line 473, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table .info .symbol {
+/* line 575, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table .info .symbol {
   color: rgba(255, 255, 255, 0.75);
 }
-/* line 477, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table .info .details {
+/* line 579, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table .info .details {
   color: #a6a6a6;
 }
-/* line 481, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table .info .magnetic-response data:after {
+/* line 583, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table .info .magnetic-response data:after {
   border-color: cyan;
 }
-
-/* line 487, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-.element {
+/* line 589, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body .element {
   border: 1px solid rgba(122, 255, 255, 0.25);
 }
-/* line 490, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-.element .inner {
-  background: #333;
+/* line 592, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body .element .inner {
+  background: #333333;
   outline: 1px solid transparent;
   -webkit-transition: background-color 0.3s ease-out, outline-color 0.3s ease-out;
   -moz-transition: background-color 0.3s ease-out, outline-color 0.3s ease-out;
   -o-transition: background-color 0.3s ease-out, outline-color 0.3s ease-out;
   transition: background-color 0.3s ease-out, outline-color 0.3s ease-out;
 }
-/* line 496, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-.element:hover .inner {
+/* line 598, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body .element:hover .inner {
   outline-color: cyan;
 }
-/* line 497, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-.element:hover .inner .symbol {
+/* line 599, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body .element:hover .inner .symbol {
   color: cyan;
 }
-/* line 504, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-.element .number {
+/* line 606, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body .element .number {
   color: rgba(0, 255, 255, 0.6);
 }
-/* line 508, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-.element .symbol {
+/* line 610, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body .element .symbol {
   color: rgba(255, 255, 255, 0.75);
   -webkit-transition: color 0.3s ease-out;
   -moz-transition: color 0.3s ease-out;
   -o-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
-/* line 513, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-.element .details {
-  color: rgba(122, 255, 255, 0.6);
+/* line 615, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body .element .details {
+  color: rgba(161, 255, 255, 0.7);
   text-rendering: optimizeLegibility;
   word-wrap: break-word;
   line-height: 1;
 }
+/* line 625, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table.magnetic [data-magnetic-order="dia"] > .inner {
+  background: #400b42;
+}
+/* line 629, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table.magnetic .info abbr.dia,
+body #periodic-table.magnetic .element.dia > .inner {
+  background: #400b42;
+}
+/* line 625, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table.magnetic [data-magnetic-order="para"] > .inner {
+  background: #0b5e00;
+}
+/* line 629, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table.magnetic .info abbr.para,
+body #periodic-table.magnetic .element.para > .inner {
+  background: #0b5e00;
+}
+/* line 625, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table.magnetic [data-magnetic-order="anti"] > .inner {
+  background: #0a0081;
+}
+/* line 629, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table.magnetic .info abbr.anti,
+body #periodic-table.magnetic .element.anti > .inner {
+  background: #0a0081;
+}
+/* line 625, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table.magnetic [data-magnetic-order="ferro"] > .inner {
+  background: #660000;
+}
+/* line 629, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body #periodic-table.magnetic .info abbr.ferro,
+body #periodic-table.magnetic .element.ferro > .inner {
+  background: #660000;
+}
 
-/* line 523, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table.magnetic [data-magnetic-order="dia"] > .inner {
-  background: #400b42;
+/* line 451, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin {
+  background: #f2f2f2;
 }
-/* line 527, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table.magnetic .info abbr.dia,
-#periodic-table.magnetic .element.dia > .inner {
-  background: #400b42;
+/* line 455, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #about {
+  color: black;
 }
-/* line 523, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table.magnetic [data-magnetic-order="para"] > .inner {
-  background: #0b5e00;
+/* line 458, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #about .ctrl-back {
+  background: #e6e6e6;
+  color: #222222;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
 }
-/* line 527, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table.magnetic .info abbr.para,
-#periodic-table.magnetic .element.para > .inner {
-  background: #0b5e00;
+/* line 465, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #about .ctrl-back:hover {
+  background: #d9d9d9;
 }
-/* line 523, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table.magnetic [data-magnetic-order="anti"] > .inner {
-  background: #0a0081;
+/* line 469, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #about .ctrl-back:active {
+  background: #d9d9d9;
 }
-/* line 527, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table.magnetic .info abbr.anti,
-#periodic-table.magnetic .element.anti > .inner {
-  background: #0a0081;
+/* line 477, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin .toggler button {
+  background: white;
+  color: #552222;
+  border: 1px solid rgba(180, 0, 0, 0.4);
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
-/* line 523, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table.magnetic [data-magnetic-order="ferro"] > .inner {
-  background: #660000;
+/* line 483, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin .toggler button:hover {
+  border-color: rgba(180, 0, 0, 0.8);
 }
-/* line 527, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
-#periodic-table.magnetic .info abbr.ferro,
-#periodic-table.magnetic .element.ferro > .inner {
-  background: #660000;
+/* line 491, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin .toggler button.on {
+  color: #fdf9f9;
+  background: rgba(180, 0, 0, 0.8);
+  border-color: rgba(180, 0, 0, 0.8);
+}
+/* line 499, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #site-header {
+  background: white;
+  color: #552222;
+}
+/* line 503, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #site-header h1 {
+  color: #222222;
+}
+/* line 507, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #site-header a {
+  color: #222222;
+}
+/* line 511, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #site-header ul a {
+  background: rgba(180, 0, 0, 0);
+  color: #222222;
+  border: 2px solid white;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+/* line 518, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #site-header ul a:hover {
+  background: #e6e6e6;
+}
+/* line 522, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #site-header ul a:active {
+  background: #d9d9d9;
+}
+/* line 528, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #sidebar {
+  background: white;
+  color: #b40000;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+/* line 533, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #sidebar .ctrl-toggle {
+  background: rgba(180, 0, 0, 0);
+  color: #222222;
+  cursor: pointer;
+  border: 2px solid white;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+/* line 543, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin .reveal #sidebar .ctrl-toggle-sidebar {
+  background: #db8585;
+}
+/* line 547, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin .reveal-video #sidebar .ctrl-toggle-video {
+  background: #db8585;
+}
+/* line 552, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #sidebar .ctrl-toggle:hover {
+  background: #e6e6e6;
+}
+/* line 556, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #sidebar .ctrl-toggle:active {
+  background: #d9d9d9;
+}
+/* line 561, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #video-area {
+  background: white;
+  border: 1px solid #e6e6e6;
+}
+/* line 566, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table {
+  background: #f2f2f2;
+}
+/* line 569, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table .info {
+  background: white;
+  color: #552222;
+  border: 1px solid #e6e6e6;
+}
+/* line 575, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table .info .symbol {
+  color: rgba(0, 0, 0, 0.75);
+}
+/* line 579, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table .info .details {
+  color: black;
+}
+/* line 583, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table .info .magnetic-response data:after {
+  border-color: #b40000;
+}
+/* line 589, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin .element {
+  border: 1px solid rgba(255, 47, 47, 0.25);
+}
+/* line 592, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin .element .inner {
+  background: white;
+  outline: 1px solid transparent;
+  -webkit-transition: background-color 0.3s ease-out, outline-color 0.3s ease-out;
+  -moz-transition: background-color 0.3s ease-out, outline-color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-out, outline-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out, outline-color 0.3s ease-out;
+}
+/* line 598, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin .element:hover .inner {
+  outline-color: #b40000;
+}
+/* line 599, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin .element:hover .inner .symbol {
+  color: #b40000;
+}
+/* line 606, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin .element .number {
+  color: rgba(180, 0, 0, 0.6);
+}
+/* line 610, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin .element .symbol {
+  color: rgba(0, 0, 0, 0.75);
+  -webkit-transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+}
+/* line 615, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin .element .details {
+  color: rgba(89, 32, 32, 0.7);
+  text-rendering: optimizeLegibility;
+  word-wrap: break-word;
+  line-height: 1;
+}
+/* line 625, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table.magnetic [data-magnetic-order="dia"] > .inner {
+  background: #dda9c2;
+}
+/* line 629, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table.magnetic .info abbr.dia,
+body.light-skin #periodic-table.magnetic .element.dia > .inner {
+  background: #dda9c2;
+}
+/* line 625, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table.magnetic [data-magnetic-order="para"] > .inner {
+  background: #8adf7e;
+}
+/* line 629, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table.magnetic .info abbr.para,
+body.light-skin #periodic-table.magnetic .element.para > .inner {
+  background: #8adf7e;
+}
+/* line 625, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table.magnetic [data-magnetic-order="anti"] > .inner {
+  background: #a09ae6;
+}
+/* line 629, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table.magnetic .info abbr.anti,
+body.light-skin #periodic-table.magnetic .element.anti > .inner {
+  background: #a09ae6;
+}
+/* line 625, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table.magnetic [data-magnetic-order="ferro"] > .inner {
+  background: #e08585;
+}
+/* line 629, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
+body.light-skin #periodic-table.magnetic .info abbr.ferro,
+body.light-skin #periodic-table.magnetic .element.ferro > .inner {
+  background: #e08585;
 }
