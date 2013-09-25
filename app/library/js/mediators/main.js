@@ -42,6 +42,59 @@ define(
             });
         };
 
+        $.fn.selecter = function(){
+
+            var sel = $('<nav class="selecter closed">')
+                ,selected
+                ,opts
+                ,selTitle = this.find('option[selected], option').first().text()
+                ,self = this
+                ;
+
+            selected = $('<span class="selecter-selected">'+ selTitle +'</span>');
+            opts = $('<div class="selecter-options">').hide();
+            sel.append( selected );
+            sel.append( opts );
+
+            this.find('option').each(function(){
+                var el = $(this);
+                var val = el.attr('value') || el.text();
+                opts.append( '<a class="selecter-item" href="' + val + '">'+ el.text() +'</a>' );
+            });
+
+            this.on('change', function(){
+
+                var val = $(this).val();
+                var target;
+
+                sel.find('.selected').removeClass('selected');
+                target = sel.find('.selecter-item[href="'+ val +'"]').addClass('selected');
+                selected.text( target.text() );
+            });
+
+            $(document).on('click', function(){
+                opts.hide();
+                sel.addClass('closed').removeClass('open');
+            });
+
+            sel.on('click', '.selecter-selected', function( e ){
+                e.stopPropagation();
+                opts.toggle();
+                sel.toggleClass('closed open');
+            });
+
+            sel.on('click', '.selecter-item', function( e ){
+                e.stopPropagation();
+                self.val( $(this).attr('href') );
+                opts.hide();
+                sel.addClass('closed').removeClass('open');
+            });
+
+            this.after( sel );
+
+            return this;
+        };
+
         /**
          * Page-level Mediator
          * @module Main
@@ -79,20 +132,12 @@ define(
                 self.on('domready', self.onDomReady);
 
                 $(document)
-                    .on('click', '.ctrl-toggle-sidebar', function(){
-                        var active = self.el.hasClass('reveal');
-                        self.el.toggleClass('reveal');
-                        if (!active){
-                            self.el.removeClass('reveal-video');
-                        }
+                    .on('click', '.ctrl-toggle-controls', function(){
+                        self.viewport.toggleClass('reveal');
                         return false;
                     })
                     .on('click', '.ctrl-toggle-video', function(){
-                        var active = self.el.hasClass('reveal-video');
-                        self.el.toggleClass('reveal-video');
-                        if (!active){
-                            self.el.removeClass('reveal');
-                        }
+                        self.viewport.toggleClass('reveal-video');
                         return false;
                     })
                     .on('change', '.ctrl-theme', function(e, val){
@@ -118,12 +163,6 @@ define(
                         return false;
                     })
                     ;
-
-                self.on({
-                    'change:temperature': function( T ){
-                        self.controls.find('.temperature-display').text( T );
-                    }
-                });
 
                 self.periodicTable.on('element', function( data ){
 
@@ -161,8 +200,7 @@ define(
                         }
 
                         self.el.find('#about').hide();
-                        self.el.find('#slide-panel').show();
-                        self.controls.show();
+                        self.el.find('#panels').show();
                         self.periodicTable.el.show();
                         
                         require(['./mag'], function( mag ){
@@ -171,18 +209,38 @@ define(
                     }
                 })
                 .navigate({
+                    path: 'state',
+                    directions: function(params) {
+
+                        if (self.logic){
+                            self.logic.cleanup();
+                            delete self.logic;
+                        }
+
+                        self.el.find('#about').hide();
+                        self.el.find('#panels').show();
+                        self.periodicTable.el.show();
+                        
+                        require(['./state'], function( state ){
+                            self.logic = state( self, self.periodicTable );
+                        });
+                    }
+                })
+                .navigate({
                     path: 'about',
                     directions: function(params) {
 
                         self.periodicTable.el.hide();
-                        self.el.find('#slide-panel').hide();
-                        self.controls.hide();
+                        self.el.find('#panels').hide();
                         self.el.find('#about').show();
                     }
                 })
                 .otherwise('mag') // will route all unmatched paths to #/mag
                 .change(function(params, old) {
-                    
+                    var hash = window.location.hash;
+                    if ( hash && self.tableSelector.find( '[value="'+hash+'"]' ).length ){
+                        self.tableSelector.val( hash ).trigger('change');
+                    }
                 })
                 .go()
                 ;
@@ -215,8 +273,23 @@ define(
                 if (play){
 
                     self.popcorn.play();
-                    self.el.addClass('reveal-video');
+                    self.viewport.addClass('reveal-video');
                 }
+            },
+
+            temperatureRange: function( range ){
+                var self = this;
+                var start = self.get( 'temperature' );
+                start = Math.min(start, range[1]);
+
+                self.temperatureSelector = $('.ctrl-temperature').empty().noUiSlider({
+                    handles: 1,
+                    range: range,
+                    start: [start],
+                    slide: function(){
+                        $(this).trigger('change');
+                    }
+                }).trigger('change');
             },
 
             /**
@@ -226,26 +299,21 @@ define(
             onDomReady : function(){
 
                 var self = this;
+                self.viewport = $('#viewport');
                 self.el = $('#main');
-                self.controls = $('#sidebar');
+                self.controls = $('#controls');
 
-                $('.ctrl-temperature').noUiSlider({
-                    handles: 1,
-                    range: [0, 2000],
-                    start: [273],
-                    slide: function(){
-                        $(this).trigger('change');
-                    }
-                }).trigger('change');
-
-                self.set('temperature', $('.ctrl-temperature').val());
-                self.initRouter();
-
+                self.set('temperature', 273);
+                
                 $('.toggler').toggler();
+                $('.selecter.fake').remove();
+                self.tableSelector = $('.ctrl-table-switcher:first').selecter();
+
+                self.initRouter();
 
                 setTimeout(function(){
                     // reveal video after 1.5 seconds
-                    self.el.addClass('reveal-video');
+                    self.viewport.addClass('reveal-video');
                 }, 1500);
             }
 
