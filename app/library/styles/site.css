@@ -863,10 +863,10 @@ a {
   height: 30px;
   background: black;
   margin: 10px;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.5s linear;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 /* line 528, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #dipole-visualization .dipole:after {
