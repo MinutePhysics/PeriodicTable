@@ -337,7 +337,7 @@ button {
   margin: -100px 0 0 -150px;
   text-align: center;
   padding-top: 160px;
-  background: url('../images/bg-collider.png?1380174670') no-repeat center 0;
+  background: url('../images/bg-collider.png?1380210656') no-repeat center 0;
 }
 
 /* line 44, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
@@ -1497,7 +1497,7 @@ body #periodic-table.magnetic .element.anti:after {
 body #periodic-table.magnetic [data-magnetic-order="para"] .inner,
 body #periodic-table.magnetic .info abbr.para,
 body #periodic-table.magnetic .element.para .inner {
-  background: #702121 url('../images/para-texture-grey.png?1380174670') no-repeat center 0;
+  background: #702121 url('../images/para-texture-grey.png?1380210656') no-repeat center 0;
   background-size: 180px;
 }
 /* line 872, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
@@ -2149,7 +2149,7 @@ body.light-skin #periodic-table.magnetic .element.anti:after {
 body.light-skin #periodic-table.magnetic [data-magnetic-order="para"] .inner,
 body.light-skin #periodic-table.magnetic .info abbr.para,
 body.light-skin #periodic-table.magnetic .element.para .inner {
-  background: #b64444 url('../images/para-texture-grey.png?1380174670') no-repeat center 0;
+  background: #b64444 url('../images/para-texture-grey.png?1380210656') no-repeat center 0;
   background-size: 180px;
 }
 /* line 872, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
@@ -2267,13 +2267,13 @@ body.light-skin #disqus_thread a {
 
 /* line 1017, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 #viewport #periodic-table .contents {
-  background: url('../images/wm-big-logo-inverse.png?1380174670') no-repeat 200px -20px;
+  background: url('../images/wm-big-logo-inverse.png?1380210656') no-repeat 200px -20px;
   background-size: 260px;
 }
 
 /* line 1022, /Users/wellcaffeinated/Documents/github/PeriodicTable/app/library/styles/site.scss */
 .light-skin #viewport #periodic-table .contents {
-  background: url('../images/wm-big-logo.png?1380174670') no-repeat 200px -20px;
+  background: url('../images/wm-big-logo.png?1380210656') no-repeat 200px -20px;
   background-size: 260px;
 }
 
