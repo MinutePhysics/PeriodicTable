@@ -1,0 +1,1 @@
+define(["jquery","stapes","./globals"],function(e,t,n){var r=t.subclass({constructor:function(){var t=this;t.initEvents(),e(function(){t.emit("domready")})},initEvents:function(){var e=this;e.on("domready",e.onDomReady)},onDomReady:function(){var e=this}});return new r});
